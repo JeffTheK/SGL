@@ -17,6 +17,9 @@
     (print (* 5 10))
     (print (/ 5 10))
 
+    ; term
+    (term:exec "ls")
+
     ; error rasing
     (error crap)
     (print this will never run)
