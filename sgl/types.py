@@ -41,3 +41,8 @@ class String(Atom):
         return hash(self.value)
 
 Exp = (Atom, list)
+
+class Env:
+    def __init__(self, vars: dict, funcs: dict) -> None:
+        self.vars = vars
+        self.funcs = funcs
