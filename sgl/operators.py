@@ -7,6 +7,15 @@ def _equality(args, env):
 def _add(args, env):
     return eval(args[0], env) + eval(args[1], env)
 
+def _not(args, env):
+    return not eval(args[0])
+
+def _or(args, env):
+    return eval(args[0]) or eval(args[1])
+
+def _and(args, env):
+    return eval(args[0]) and eval(args[1])
+
 def _subtract(args, env):
     return eval(args[0], env) - eval(args[1], env)
 
@@ -25,10 +34,13 @@ def _greater_than(args, env):
 OPERATOR_FUNCS = {
     Symbol('=='): _equality,
     Symbol('!='): lambda args, env: not _equality(args, env),
+    Symbol('not'): _not,
+    Symbol('or'): _or,
+    Symbol('and'): _and,
     Symbol('<'): _less_than,
     Symbol('>'): _greater_than,
     Symbol('+'): _add,
     Symbol('-'): _subtract,
     Symbol('*'): _multiply,
-    Symbol('/'): _divide
+    Symbol('/'): _divide,
 }
