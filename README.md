@@ -4,6 +4,16 @@ Lisp lije programming language
 
 ## Commands
 
+### Main
+
+|Syntax|Description|
+|---|---|
+|`(program EXPR...)`|Evaluates all EXPR|
+|`(if CONDITION ON_TRUE ON_FALSE)`|Tests CONDITION when true evaluates ON_TRUE else evaluates ON_FALSE|
+|`(let NAME VALUE)`|Creates variable named NAME with value VALUE or assigns a value to already created NAME|
+|`(print ARGS...)`| Outputs ARGS |
+|`(type ARG)`| Returns type as string of ARG |
+
 ### Operators
 
 |Syntax|Description|
