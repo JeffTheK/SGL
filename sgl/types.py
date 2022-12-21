@@ -53,6 +53,17 @@ class List(Atom):
     def __hash__(self) -> int:
         return hash(self.elements)
 
+class ClassDefinition:
+    def __init__(self, name, var_names):
+        self.name = name
+        self.var_names = var_names
+
+class ClassInstance:
+    def __init__(self, definition: ClassDefinition, name: str, vars: dict):
+        self.definition = definition
+        self.name = name
+        self.vars = vars
+
 Exp = (Atom, list)
 
 class Env:

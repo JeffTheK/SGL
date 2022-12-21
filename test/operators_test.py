@@ -1,5 +1,5 @@
 from sgl.eval import eval_string
-from sgl.std_env import STD_ENV
+from sgl.stdlib import STD_ENV
 
 def test_equality():
     assert(eval_string("(== 1 1)", STD_ENV) == True)
