@@ -7,7 +7,7 @@ Lisp lije programming language
 ### Operators
 
 |Syntax|Description|
---------------------
+|------|-----------|
 |`(== A B)`| Returns bool whether A is equal B |
 |`(!= A B)`| Returns bool whether A is NOT equal to B |
 |`(not EXPR)`| Negates EXPR expression |
