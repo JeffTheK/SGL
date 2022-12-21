@@ -5,7 +5,7 @@ def _new_str(args, env):
     output = ""
     for arg in args:
         output += arg.name + " "
-    return output
+    return output[:-1]
 
 STRING_FUNCS = {
     Symbol('new-str'): _new_str
