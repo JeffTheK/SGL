@@ -8,7 +8,7 @@ def _package_string(args, env):
     python_file = open(package_name + ".py", 'w+')
     code = f"""
 from sgl.eval import eval_string
-from sgl.std_env import STD_ENV
+from sgl.stdlib import STD_ENV
 CODE = "{string}"
 eval_string(CODE, STD_ENV)
 """
