@@ -1,5 +1,10 @@
 from .types import Exp, Symbol, Number, String, Env
 
+def eval_string(string: str, env: Env):
+    from .lexer import tokenize
+    from .parser import parse
+    return eval(parse(tokenize(string)), env)
+
 def eval(x: Exp, env: Env) -> Exp:
     "Evaluate an expression in an environment."
     if type(x) is Symbol:        # variable reference

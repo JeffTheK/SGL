@@ -8,13 +8,13 @@ def _add(args, env):
     return eval(args[0], env) + eval(args[1], env)
 
 def _not(args, env):
-    return not eval(args[0])
+    return not eval(args[0], env)
 
 def _or(args, env):
-    return eval(args[0]) or eval(args[1])
+    return eval(args[0], env) or eval(args[1], env)
 
 def _and(args, env):
-    return eval(args[0]) and eval(args[1])
+    return eval(args[0], env) and eval(args[1], env)
 
 def _subtract(args, env):
     return eval(args[0], env) - eval(args[1], env)
