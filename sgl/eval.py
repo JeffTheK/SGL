@@ -14,7 +14,7 @@ def eval(x: Exp, env: Env) -> Exp:
     elif type(x) is Number:      # constant number
         return x.value
     elif type(x) is String:
-        return x.value
+        return x.value.replace("\\s", " ").replace("\\op", "(").replace("\\cp", ")")
     elif type(x) is List:
         return x.elements
     elif x[0] in env.funcs.keys():
