@@ -40,6 +40,19 @@ class String(Atom):
     def __hash__(self) -> int:
         return hash(self.value)
 
+class List(Atom):
+    def __init__(self, elements) -> None:
+        self.elements = elements
+    
+    def __repr__(self) -> str:
+        return str(self.elements)
+    
+    def __eq__(self, __o: object) -> bool:
+        return self.elements == __o.elements
+
+    def __hash__(self) -> int:
+        return hash(self.elements)
+
 Exp = (Atom, list)
 
 class Env:

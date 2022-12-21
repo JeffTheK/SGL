@@ -1,4 +1,4 @@
-from .types import Exp, Symbol, Number, String, Env
+from .types import Exp, Symbol, Number, String, List, Env
 
 def eval_string(string: str, env: Env):
     from .lexer import tokenize
@@ -15,6 +15,8 @@ def eval(x: Exp, env: Env) -> Exp:
         return x.value
     elif type(x) is String:
         return x.value
+    elif type(x) is List:
+        return x.elements
     elif x[0] in env.funcs.keys():
         return env.funcs[x[0]](x[1:], env)
     else:                            # procedure call
