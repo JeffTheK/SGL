@@ -44,5 +44,4 @@ def tokenize(string: str):
             if char in ('()'):
                 tokens.append(char)
             continue
-    print(tokens)
     return tokens
