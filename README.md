@@ -58,3 +58,9 @@ Lisp like programming language
 |`(clear LIST`)| Removes all elements of LIST|
 |`(len LIST)`| Returns length of LIST|
 |`(for-each ITERATOR LIST EXPR`)| Evaluates EXPR for each element stored in ITERATOR in LIST |
+
+### String
+
+|Syntax|Description|
+|------|-----------|
+|`(quote EXPR...)`| Returns EXPR as string without evaluating them |

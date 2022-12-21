@@ -10,7 +10,10 @@ def setup_env():
 def test_new_str():
     assert(eval_string("(new-str Hello World)", setup_env()) == "Hello World")
 
-def tests_replace():
+def test_replace():
     env = setup_env()
     eval_string('(replace "World" "Friend" str1)', env)
     assert(env.vars[Symbol('str1')] == "Hello Friend")
+
+def test_quote():
+    assert(eval_string('(quote (print (+ 1 1)))', STD_ENV) == '(print (+ 1 1))')
