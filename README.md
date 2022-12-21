@@ -9,6 +9,17 @@ Lisp like programming language
 * `make install`
 * Thats all, now you can execute sgl file by running `sgl FILE_NAME`
 
+## Types
+
+|Name|Description|
+|---|---|
+|`Symbol`| A word that starts with ascii characters, can include symbols like `-` `:` |
+|`Number`| An integer or float |
+|`List`| A collection of elements with any type |
+|`String`| Collection of characters |
+|`Atom`| An Atom is either Symbol, Number, List or String |
+|`Expression`| A Symbol followed by zero or more Atoms enclosed in braces |
+
 ## Commands
 
 ### Main
