@@ -29,3 +29,14 @@ Lisp lije programming language
 |`(- A B)`| Returns A minus B |
 |`(* A B)`| Returns A multiplied by B |
 |`(/ A B)`| Returns A divided by B |
+
+### List
+
+|Syntax|Description|
+|------|-----------|
+|`(new-list ELEMENTS...)`| Creates new List with ELEMENTS as elements|
+|`(elem-at INDEX LIST)`| Returns element at INDEX of LIST|
+|`(pop-at INDEX LIST)`| Removes and returns element at INDEX of LIST|
+|`(clear LIST`)| Removes all elements of LIST|
+|`(len LIST)`| Returns length of LIST|
+|`(for-each ITERATOR LIST EXPR`)| Evaluates EXPR for each element stored in ITERATOR in LIST |
