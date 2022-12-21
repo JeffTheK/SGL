@@ -58,6 +58,7 @@ Lisp like programming language
 |`(clear LIST`)| Removes all elements of LIST|
 |`(len LIST)`| Returns length of LIST|
 |`(for-each ITERATOR LIST EXPR`)| Evaluates EXPR for each element stored in ITERATOR in LIST |
+|`(insert INDEX VALUE LIST)` | Inserts VALUE at INDEX in LIST |
 
 ### String
 

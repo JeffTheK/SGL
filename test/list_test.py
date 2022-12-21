@@ -33,3 +33,8 @@ def test_clear():
     env = setup_env()
     eval_string('(clear i)', env)
     assert(eval_string('(len i)', env) == 0)
+
+def test_insert():
+    env = setup_env()
+    eval_string('(insert 1 "test" i)', env)
+    assert(eval_string('(elem-at 1 i)', env) == "test")

@@ -33,11 +33,18 @@ def _for_each(args, env):
         env.vars[iterator] = elem
         eval(action, env)
 
+def _insert(args, env):
+    index = eval(args[0], env)
+    value = eval(args[1], env)
+    list: List = eval(args[2], env)
+    list.elements.insert(index, value)
+
 LIST_FUNCS = {
     Symbol('new-list'): _new_list,
     Symbol('elem-at'): _elem_at,
     Symbol('pop-at'): _pop_at,
     Symbol('clear'): _clear,
     Symbol('len'): _len,
-    Symbol('for-each'): _for_each
+    Symbol('for-each'): _for_each,
+    Symbol('insert'): _insert
 }

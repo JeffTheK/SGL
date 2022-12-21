@@ -41,7 +41,7 @@ class String(Atom):
         return hash(self.value)
 
 class List(Atom):
-    def __init__(self, elements) -> None:
+    def __init__(self, elements: list) -> None:
         self.elements = elements
     
     def __repr__(self) -> str:
