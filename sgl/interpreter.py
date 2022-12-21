@@ -2,7 +2,7 @@ from .types import *
 from .lexer import tokenize
 from .parser import parse
 from .eval import eval, eval_string
-from .std_env import STD_ENV
+from .stdlib import STD_ENV
 import sys
 import traceback
 
