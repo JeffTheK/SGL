@@ -7,6 +7,7 @@ from .string import STRING_FUNCS
 from .random import RANDOM_FUNCS
 from .term import TERM_FUNCS
 from .packager import PACKAGER_FUNCS
+from .version import __version__
 
 STD_VARS = {
     Symbol('true'): True,
