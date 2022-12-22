@@ -39,6 +39,16 @@ def _insert(args, env):
     list: List = eval(args[2], env)
     list.elements.insert(index, value)
 
+def _filter(args, env):
+    list: List = eval(args[0], env)
+    condition = args[1]
+    output = List([])
+    for x in list.elements:
+        env.vars[Symbol('ARG1')] = x
+        if eval(condition, env) == True:
+            output.elements.append(x)
+    return output
+
 LIST_FUNCS = {
     Symbol('new-list'): _new_list,
     Symbol('elem-at'): _elem_at,
@@ -46,5 +56,6 @@ LIST_FUNCS = {
     Symbol('clear'): _clear,
     Symbol('len'): _len,
     Symbol('for-each'): _for_each,
-    Symbol('insert'): _insert
+    Symbol('insert'): _insert,
+    Symbol('filter'): _filter
 }

@@ -38,3 +38,8 @@ def test_insert():
     env = setup_env()
     eval_string('(insert 1 "test" i)', env)
     assert(eval_string('(elem-at 1 i)', env) == "test")
+
+def test_filter():
+    env = STD_ENV
+    eval_string('(let list1 (new-list 1 2 3 4 5 6 7 8 9 10))', env)
+    eval_string('(filter list1 (> ARG1 5))', env)

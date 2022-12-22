@@ -61,6 +61,7 @@ Lisp like programming language
 |`(len LIST)`| Returns length of LIST|
 |`(for-each ITERATOR LIST EXPR`)| Evaluates EXPR for each element stored in ITERATOR in LIST |
 |`(insert INDEX VALUE LIST)` | Inserts VALUE at INDEX in LIST |
+|`(filter LIST CONDITION)` | Returns new list with elements that pass CONDITION |
 
 ### String
 
