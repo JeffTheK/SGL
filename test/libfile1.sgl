@@ -1,0 +1,1 @@
+(func my-add-from-other-file (+ ARG1 ARG2))

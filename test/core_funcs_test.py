@@ -23,3 +23,8 @@ def test_func():
 
     eval_string('(func my-add (+ ARG1 ARG2))', env)
     assert(eval_string('(my-add 2 3)', env) == 5)
+
+def test_include():
+    env = STD_ENV
+    eval_string('(include "test/libfile1.sgl")', env)
+    assert(eval_string('(my-add-from-other-file 2 3)', env) == 5)

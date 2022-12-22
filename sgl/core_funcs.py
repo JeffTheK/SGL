@@ -1,5 +1,6 @@
-from .types import Symbol
-from .eval import eval
+from .types import Symbol, String
+from .eval import eval, eval_string
+import os
 
 def _program(args, env):
     for exp in args:
@@ -39,6 +40,13 @@ def _func(args, env):
     body = args[1:]
     env.funcs[name] = lambda args, env, body=body: _func_call(args, env, body)
 
+def _include(args, env):
+    file_path: String = eval(args[0], env)
+    file = open(file_path, 'r')
+    code = file.read()
+    file.close()
+    eval_string(code, env)
+
 CORE_FUNCS = {
     Symbol('program'): _program,
     Symbol('if'): _if,
@@ -46,5 +54,6 @@ CORE_FUNCS = {
     Symbol('let'): _let,
     Symbol('type'): _type,
     Symbol('error'): _error,
-    Symbol('func'): _func
+    Symbol('func'): _func,
+    Symbol('include'): _include
 }
