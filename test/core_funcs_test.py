@@ -16,6 +16,10 @@ def test_type():
 
 def test_func():
     env = STD_ENV
+
     eval_string('(func my-func1 (+ 1 1))', env)
     assert(Symbol('my-func1') in env.funcs.keys())
     assert(eval_string('(my-func1)', env) == 2)
+
+    eval_string('(func my-add (+ ARG1 ARG2))', env)
+    assert(eval_string('(my-add 2 3)', env) == 5)

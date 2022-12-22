@@ -26,6 +26,10 @@ def _error(args, env):
     exit()
 
 def _func_call(args, env, body):
+    for i in range(len(args)):
+        arg = args[i]
+        env.vars[Symbol(f'ARG{i + 1}')] = eval(arg, env)
+
     for x in body[:-1]:
         eval(x, env)
     return eval(body[-1], env)
