@@ -67,3 +67,8 @@ Lisp like programming language
 |Syntax|Description|
 |------|-----------|
 |`(quote EXPR...)`| Returns EXPR as string without evaluating them |
+
+### Class
+|Syntax|Description|
+|------|-----------|
+|`(get-field FIELD CLASS_INSTANCE)`| Returns FIELD from CLASS_INSTANCE |

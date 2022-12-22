@@ -20,6 +20,12 @@ def _class(args, env):
     env.vars[Symbol(name)] = definition
     env.funcs[Symbol(f'new-{name.lower()}')] = lambda args2, env2, class_def=definition: _new(env2, class_def, args2[0], args2[1:])
 
+def _get_field(args, env):
+    field_name = args[0].name
+    instance: ClassInstance = eval(args[1], env)
+    return instance.vars[field_name]
+
 CLASS_FUNCS = {
-    Symbol('class'): _class
+    Symbol('class'): _class,
+    Symbol('get-field'): _get_field
 }
