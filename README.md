@@ -6,7 +6,7 @@ Lisp like programming language
 
 * `git clone https://github.com/JeffTheK/SGL/.git`
 * `cd SGL`
-* `make install`
+* `make install` or `pip install .`
 * Thats all, now you can execute sgl file by running `sgl FILE_NAME`
 
 ## Types
