@@ -25,7 +25,14 @@ def _get_field(args, env):
     instance: ClassInstance = eval(args[1], env)
     return instance.vars[field_name]
 
+def _set_field(args, env):
+    field_name = args[0].name
+    instance: ClassInstance = eval(args[1], env)
+    new_value = eval(args[2], env)
+    instance.vars[field_name] = new_value
+
 CLASS_FUNCS = {
     Symbol('class'): _class,
-    Symbol('get-field'): _get_field
+    Symbol('get-field'): _get_field,
+    Symbol('set-field'): _set_field
 }

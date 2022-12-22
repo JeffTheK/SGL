@@ -27,3 +27,9 @@ def test_get_field():
     env = setup_env()
     eval_string('(new-person john "John" 21)', env)
     assert(eval_string('(get-field name john)', env).value == "John")
+
+def test_set_field():
+    env = setup_env()
+    eval_string('(new-person john "John" 21)', env)
+    eval_string('(set-field age john 30)', env)
+    assert(eval_string('(get-field age john)', env) == 30)

@@ -72,3 +72,4 @@ Lisp like programming language
 |Syntax|Description|
 |------|-----------|
 |`(get-field FIELD CLASS_INSTANCE)`| Returns FIELD from CLASS_INSTANCE |
+|`(set-field FIELD CLASS_INSTANCE NEW_VALUE)` | Sets FIELD from CLASS_INSTANCE to NEW_VALUE |
