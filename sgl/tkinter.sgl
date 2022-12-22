@@ -1,0 +1,11 @@
+(program
+    (func Tk (pytosgl:new-py-class "Tk" "tkinter"))
+    (func new-label (pytosgl:new-py-class "Label" "tkinter"))
+    (func example-app 
+        (let root (Tk))
+        (let label1 (new-label))
+        (pytosgl:instance-call label1 "pack")
+        (pytosgl:instance-call label1 "insert" 0 "Hello World")
+        (pytosgl:instance-call root "mainloop")
+    )
+)

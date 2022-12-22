@@ -10,6 +10,7 @@ from .term import TERM_FUNCS
 from .packager import PACKAGER_FUNCS
 from .special import SPECIAL_VARS, SPECIAL_FUNCS
 from .file import FILE_FUNCS
+from .py_to_sgl import PY_TO_SGL_FUNCS
 
 STD_VARS = {
     Symbol('true'): True,
@@ -27,7 +28,8 @@ STD_FUNCS = {
     **TERM_FUNCS,
     **PACKAGER_FUNCS,
     **SPECIAL_FUNCS,
-    **FILE_FUNCS
+    **FILE_FUNCS,
+    **PY_TO_SGL_FUNCS
 }
 
 STD_ENV = Env(STD_VARS, STD_FUNCS)
