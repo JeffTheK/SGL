@@ -8,13 +8,12 @@ from ._class import CLASS_FUNCS
 from .random import RANDOM_FUNCS
 from .term import TERM_FUNCS
 from .packager import PACKAGER_FUNCS
-from .version import __version__
+from .special import SPECIAL_VARS, SPECIAL_FUNCS
 
 STD_VARS = {
     Symbol('true'): True,
     Symbol('false'): False,
-    Symbol('sgl:version'): __version__,
-    Symbol('sgl:authors'): "Dmytro Kolibabchuk"
+    **SPECIAL_VARS
 }
 
 STD_FUNCS = {
@@ -25,7 +24,8 @@ STD_FUNCS = {
     **CLASS_FUNCS,
     **RANDOM_FUNCS,
     **TERM_FUNCS,
-    **PACKAGER_FUNCS
+    **PACKAGER_FUNCS,
+    **SPECIAL_FUNCS
 }
 
 STD_ENV = Env(STD_VARS, STD_FUNCS)
