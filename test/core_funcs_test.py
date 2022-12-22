@@ -13,3 +13,9 @@ def test_let():
 
 def test_type():
     assert(eval_string("(type 1)", STD_ENV) == "Number")
+
+def test_func():
+    env = STD_ENV
+    eval_string('(func my-func1 (+ 1 1))', env)
+    assert(Symbol('my-func1') in env.funcs.keys())
+    assert(eval_string('(my-func1)', env) == 2)

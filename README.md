@@ -31,6 +31,7 @@ Lisp like programming language
 |`(let NAME VALUE)`|Creates variable named NAME with value VALUE or assigns a value to already created NAME|
 |`(print ARGS...)`| Outputs ARGS |
 |`(type ARG)`| Returns type as string of ARG |
+|`(func NAME EXPR...)` | Defines new function named NAME with EXPR... as body. Returns last expression as result |
 
 ### Operators
 
