@@ -32,6 +32,7 @@ Lisp like programming language
 |`(print ARGS...)`| Outputs ARGS |
 |`(type ARG)`| Returns type as string of ARG |
 |`(func NAME EXPR...)` | Defines new function named NAME with EXPR... as body. Returns last expression as result |
+|`(class NAME VARS...)`| Defines new class named NAME with variable names VARS..., also creates a function `(new-NAME ARGS...)` that constructs an instance of that class |
 
 ### Operators
 

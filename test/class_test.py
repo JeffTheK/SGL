@@ -20,5 +20,5 @@ def test_new():
     eval_string('(new-person john "John" 21)', env)
     instance: ClassInstance = env.vars[Symbol('john')]
     assert(instance.name == Symbol('john'))
-    assert(instance.vars['name'] == 'John')
-    assert(instance.vars['age'] == 21)
+    assert(instance.vars['name'].value == 'John')
+    assert(instance.vars['age'].value == 21)

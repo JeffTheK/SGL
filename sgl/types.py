@@ -63,6 +63,9 @@ class ClassInstance:
         self.definition = definition
         self.name = name
         self.vars = vars
+    
+    def __repr__(self) -> str:
+        return f"{self.name.name}: {str(self.vars)}"
 
 Exp = (Atom, list)
 
