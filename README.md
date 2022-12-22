@@ -71,7 +71,16 @@ Lisp like programming language
 |`(quote EXPR...)`| Returns EXPR as string without evaluating them |
 
 ### Class
+
 |Syntax|Description|
 |------|-----------|
 |`(get-field FIELD CLASS_INSTANCE)`| Returns FIELD from CLASS_INSTANCE |
 |`(set-field FIELD CLASS_INSTANCE NEW_VALUE)` | Sets FIELD from CLASS_INSTANCE to NEW_VALUE |
+
+### File
+|Syntax|Description|
+|------|-----------|
+|`(file:open PATH MODE)` | Opens file on PATH with MODE and returns file pointer |
+|`(file:read FILE)` | Reads FILE and returns text as string |
+|`(file:write FILE TEXT)` | Writes TEXT to FILE |
+|`(file:close FILE)` | Closes file and finishes all operations |
