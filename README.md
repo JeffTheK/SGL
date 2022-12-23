@@ -34,6 +34,7 @@ Lisp like programming language
 |`(func NAME EXPR...)` | Defines new function named NAME with EXPR... as body. Returns last expression as result |
 |`(class NAME VARS...)`| Defines new class named NAME with variable names VARS..., also creates a function `(new-NAME ARGS...)` that constructs an instance of that class |
 |`(include FILE_PATH)` | Reads and evaluates file in FILE_PATH |
+|`(use-namespace NAMESPACE)` | Removes the NAMESPACE part from functions and variables symbols for use in current file |
 
 ### Operators
 

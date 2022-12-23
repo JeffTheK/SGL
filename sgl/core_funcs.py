@@ -47,6 +47,22 @@ def _include(args, env):
     file.close()
     eval_string(code, env)
 
+def _use_namespace(args, env):
+    namespace = eval(args[0], env) + ":"
+    # funcs
+    for i in range(len(env.funcs.keys())):
+        old_key = list(env.funcs.keys())[i]
+        if namespace in old_key.name:
+            new_key = Symbol(old_key.name.replace(namespace, ''))
+            env.funcs[new_key] = env.funcs.pop(old_key)
+    
+    # vars
+    for i in range(len(env.vars.keys())):
+        old_key = list(env.vars.keys())[i]
+        if namespace in old_key.name:
+            new_key = Symbol(old_key.name.replace(namespace, ''))
+            env.vars[new_key] = env.funcs.pop(old_key)
+
 CORE_FUNCS = {
     Symbol('program'): _program,
     Symbol('if'): _if,
@@ -55,5 +71,6 @@ CORE_FUNCS = {
     Symbol('type'): _type,
     Symbol('error'): _error,
     Symbol('func'): _func,
-    Symbol('include'): _include
+    Symbol('include'): _include,
+    Symbol('use-namespace'): _use_namespace
 }

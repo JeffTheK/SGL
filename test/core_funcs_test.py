@@ -28,3 +28,9 @@ def test_include():
     env = STD_ENV
     eval_string('(include "test/libfile1.sgl")', env)
     assert(eval_string('(my-add-from-other-file 2 3)', env) == 5)
+
+def test_use_namespace():
+    env = STD_ENV
+    eval_string('(func somelib:some-func (+ ARG1 ARG2))', env)
+    eval_string('(use-namespace "somelib")', env)
+    assert(eval_string('(some-func 2 3)', env) == 5)
