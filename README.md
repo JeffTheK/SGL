@@ -71,6 +71,7 @@ Lisp like programming language
 |Syntax|Description|
 |------|-----------|
 |`(quote EXPR...)`| Returns EXPR as string without evaluating them |
+|`(format STRING ARGS...)` | Replaces ARG1-ARGX in STRING with ARGS... |
 
 ### Class
 

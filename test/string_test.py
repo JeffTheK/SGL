@@ -17,3 +17,7 @@ def test_replace():
 
 def test_quote():
     assert(eval_string('(quote (print (+ 1 1)))', STD_ENV) == '(print (+ 1 1))')
+
+def test_format():
+    assert(eval_string('(format "Hello my name is ARG1 I`m ARG2 years old" "John" 21)', STD_ENV)
+        == "Hello my name is John I`m 21 years old")

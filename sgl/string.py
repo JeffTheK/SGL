@@ -25,8 +25,19 @@ def _quote(args, env):
             output += str(arg.value) + " "
     return output.replace(' )', ')')
 
+def _format(args, env):
+    string = eval(args[0], env)
+    arguments = []
+    for arg in args[1:]:
+        arguments.append(str(eval(arg, env)))
+    for i in range(len(arguments)):
+        arg = arguments[i]
+        string = string.replace(f"ARG{i + 1}", arg)
+    return string
+
 STRING_FUNCS = {
     Symbol('new-str'): _new_str,
     Symbol('replace'): _replace,
-    Symbol('quote'): _quote
+    Symbol('quote'): _quote,
+    Symbol('format'): _format
 }
