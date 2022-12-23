@@ -18,3 +18,7 @@ def test_tokenize():
     code3 = '(program)'
     result3 = strings_to_tokens(['(','program',')'])
     assert(lexer.tokenize(code3) == result3)
+
+    code3 = '("0.5")'
+    result3 = strings_to_tokens(['(','"0.5"',')'])
+    assert(lexer.tokenize(code3) == result3)

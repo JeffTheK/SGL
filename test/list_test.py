@@ -1,5 +1,5 @@
 from sgl.eval import eval_string
-from sgl.std_env import STD_ENV
+from sgl.stdlib import STD_ENV
 from sgl.types import List, Symbol
 
 def setup_env():

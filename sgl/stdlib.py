@@ -11,6 +11,7 @@ from .packager import PACKAGER_FUNCS
 from .special import SPECIAL_VARS, SPECIAL_FUNCS
 from .file import FILE_FUNCS
 from .py_to_sgl import PY_TO_SGL_FUNCS
+from .number import NUMBER_FUNCS
 
 STD_VARS = {
     Symbol('true'): True,
@@ -21,6 +22,7 @@ STD_VARS = {
 STD_FUNCS = {
     **CORE_FUNCS,
     **OPERATOR_FUNCS,
+    **NUMBER_FUNCS,
     **LIST_FUNCS,
     **STRING_FUNCS,
     **CLASS_FUNCS,
