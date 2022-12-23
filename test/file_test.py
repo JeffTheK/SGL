@@ -7,6 +7,8 @@ def setup():
     env = STD_ENV
     if os.path.isfile('test/file1.txt'):
         os.remove('test/file1.txt')
+    if os.path.isdir('test/testdir'):
+        os.remove('test/testdir')
     eval_string('(let file (file:open "test/file1.txt" "w+"))', env)
     return env
 
@@ -27,3 +29,8 @@ def test_read():
 
     eval_string('(let file (file:open "test/file1.txt" "r"))', env)
     assert(eval_string('(file:read file)', env) == 'Hello World!')
+
+def test_mkdir():
+    env = setup()
+    eval_string('(file:mkdir "test/testdir")', env)
+    assert(os.path.isdir('test/testdir'))

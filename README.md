@@ -85,3 +85,4 @@ Lisp like programming language
 |`(file:read FILE)` | Reads FILE and returns text as string |
 |`(file:write FILE TEXT)` | Writes TEXT to FILE |
 |`(file:close FILE)` | Closes file and finishes all operations |
+|`(file:mkdir PATH)` | Creates directory in PATH |

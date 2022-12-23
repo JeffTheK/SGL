@@ -20,9 +20,14 @@ def _close(args, env):
     file = eval(args[0], env)
     file.close()
 
+def _mkdir(args, env):
+    path = eval(args[0], env)
+    os.mkdir(path)
+
 FILE_FUNCS = {
     Symbol('file:open'): _open,
     Symbol('file:read'): _read,
     Symbol('file:write'): _write,
-    Symbol('file:close'): _close
+    Symbol('file:close'): _close,
+    Symbol('file:mkdir'): _mkdir
 }
