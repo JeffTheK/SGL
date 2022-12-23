@@ -6,13 +6,13 @@ from .stdlib import STD_ENV
 import sys
 import traceback
 
-def exec_string(string: str):
-    tokens = tokenize(string)
+def exec_string(string: str, file_path=None):
+    tokens = tokenize(string, file_path)
     eval(parse(tokens), STD_ENV)
 
 def exec_file(file_path: str):
     file = open(file_path, 'r')
-    exec_string(file.read())
+    exec_string(file.read(), file_path)
     file.close()
 
 def repl():

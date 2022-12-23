@@ -45,7 +45,7 @@ def _include(args, env):
     file = open(file_path, 'r')
     code = file.read()
     file.close()
-    eval_string(code, env)
+    eval_string(code, env, file_path)
 
 def _use_namespace(args, env):
     namespace = eval(args[0], env) + ":"
