@@ -35,6 +35,7 @@ Lisp like programming language
 |`(class NAME VARS...)`| Defines new class named NAME with variable names VARS..., also creates a function `(new-NAME ARGS...)` that constructs an instance of that class |
 |`(include FILE_PATH)` | Reads and evaluates file in FILE_PATH |
 |`(use-namespace NAMESPACE)` | Removes the NAMESPACE part from functions and variables symbols for use in current file |
+|`(ensure CONDITION MESSAGE)` | Asserts CONDITION and raises exception when false and prints optional MESSAGE |
 
 ### Operators
 

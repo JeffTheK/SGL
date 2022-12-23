@@ -8,7 +8,7 @@ def setup():
     if os.path.isfile('test/file1.txt'):
         os.remove('test/file1.txt')
     if os.path.isdir('test/testdir'):
-        os.remove('test/testdir')
+        os.rmdir('test/testdir')
     eval_string('(let file (file:open "test/file1.txt" "w+"))', env)
     return env
 

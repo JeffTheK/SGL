@@ -63,6 +63,15 @@ def _use_namespace(args, env):
             new_key = Symbol(old_key.name.replace(namespace, ''))
             env.vars[new_key] = env.funcs.pop(old_key)
 
+def _ensure(args, env):
+    condition = eval(args[0], env)
+    message = None
+    if len(args) > 1:
+        message = eval(args[1], env)
+    if condition == False:
+        print("KEK")
+        raise AssertionError(message)
+
 CORE_FUNCS = {
     Symbol('program'): _program,
     Symbol('if'): _if,
@@ -72,5 +81,6 @@ CORE_FUNCS = {
     Symbol('error'): _error,
     Symbol('func'): _func,
     Symbol('include'): _include,
-    Symbol('use-namespace'): _use_namespace
+    Symbol('use-namespace'): _use_namespace,
+    Symbol('ensure'): _ensure
 }

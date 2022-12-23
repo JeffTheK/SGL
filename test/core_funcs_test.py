@@ -1,6 +1,7 @@
 from sgl.eval import eval_string
 from sgl.stdlib import STD_ENV
 from sgl.types import Symbol
+import pytest
 
 def test_if():
     assert(eval_string("(if (== 1 1) 1 2)", STD_ENV) == 1)
@@ -34,3 +35,9 @@ def test_use_namespace():
     eval_string('(func somelib:some-func (+ ARG1 ARG2))', env)
     eval_string('(use-namespace "somelib")', env)
     assert(eval_string('(some-func 2 3)', env) == 5)
+
+def test_ensure():
+    env = STD_ENV
+    eval_string('(ensure (== 1 1))', env)
+    with pytest.raises(AssertionError):
+        eval_string('(ensure (== 1 2))', env)

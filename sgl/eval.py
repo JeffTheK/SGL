@@ -25,5 +25,7 @@ def eval(x: Exp, env: Env, file_path=None) -> Exp:
             proc = eval(x[0], env)
             args = [eval(arg, env) for arg in x[1:]]
             return proc(*args)
+    except AssertionError as e:
+        raise e
     except Exception as e:
         error("Eval error", e, None, file_path)
