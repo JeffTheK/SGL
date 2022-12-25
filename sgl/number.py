@@ -9,11 +9,11 @@ def _to_number(args, env):
 
 def _to_int(args, env):
     number = _to_number(args, env)
-    return Number(int(number.value))
+    return int(number.value)
 
 def _to_float(args, env):
     number = _to_number(args, env)
-    return Number(float(number.value))
+    return float(number.value)
 
 def _range(args, env):
     start = eval(args[0], env)

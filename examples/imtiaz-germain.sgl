@@ -2,19 +2,9 @@
     (func is-prime 
         (let n ARG1)
         (let result true)
-        (func between-4-1
-            (< n 4)
-        )
-
-        (func or1 (== (% n 2) 0))
-        (func or2 (== (% n 3) 0))
-        (func divides-by-2-or-3
-            (or (or1) (or2))
-        )
-
-        (if (between-4-1)
-            (let result (> n 1))
-            (if (divides-by-2-or-3) 
+        
+        (for-each i (range 2 (+ (to-int (math:sqrt n)) 1) 1)
+            (if (== (% n i) 0)
                 (let result false)
                 (pass)
             )
@@ -30,7 +20,7 @@
         (let d (+ (* 2 c) 1))
         (let result false)
 
-        (print-line (format "a: ARG1, b: ARG2, c: ARG3, d: ARG4" a b c d))
+        ;(print-line (format "a: ARG1, b: ARG2, c: ARG3, d: ARG4" a b c d))
 
         (func is-not-prime (not (is-prime ARG1)))
         (func a-and-b-are-primes (and (is-prime a) (is-prime b)))
@@ -43,10 +33,10 @@
         result
     )
 
-    (print-line (is-prime 119))
+    ;(print-line (is-prime 119))
     ;(print-line (is-germain-prime 10))
-    (print-line (is-germain-prime 29))
-    ;(for-each x (range 1 1000 1)
-    ;    (is-germain-prime x)
-    ;)
+    ;(print-line (is-germain-prime 29))
+    (for-each x (range 1 1000 1)
+        (is-germain-prime x)
+    )
 )

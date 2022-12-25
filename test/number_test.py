@@ -12,10 +12,10 @@ def test_to_num():
 
 def test_to_int():
     env = setup()
-    assert(eval_string('(to-int (/ num1 2))', env) == Number(2))
+    assert(eval_string('(to-int (/ num1 2))', env) == 2)
 
 def test_to_float():
-    assert(eval_string('(to-float "0.5")', STD_ENV) == Number(0.5))
+    assert(eval_string('(to-float "0.5")', STD_ENV) == 0.5)
 
 def test_range(capsys):
     eval_string('(for-each x (range 0 5 1) (print x))', STD_ENV)
