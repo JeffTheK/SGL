@@ -11,10 +11,6 @@ def _if(args, env):
     exp = (conseq if eval(test, env) else alt)
     return eval(exp, env)
 
-def _print(args, env):
-    for arg in args:
-        print(eval(arg, env))
-
 def _let(args, env):
     (symbol, exp) = args
     env.vars[symbol] = eval(exp, env)
@@ -75,7 +71,6 @@ def _ensure(args, env):
 CORE_FUNCS = {
     Symbol('program'): _program,
     Symbol('if'): _if,
-    Symbol('print'): _print,
     Symbol('let'): _let,
     Symbol('type'): _type,
     Symbol('error'): _error,

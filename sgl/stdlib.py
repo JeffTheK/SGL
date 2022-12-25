@@ -12,6 +12,7 @@ from .special import SPECIAL_VARS, SPECIAL_FUNCS
 from .file import FILE_FUNCS
 from .py_to_sgl import PY_TO_SGL_FUNCS
 from .number import NUMBER_FUNCS
+from .print import PRINT_FUNCS
 
 STD_VARS = {
     Symbol('true'): True,
@@ -31,7 +32,8 @@ STD_FUNCS = {
     **PACKAGER_FUNCS,
     **SPECIAL_FUNCS,
     **FILE_FUNCS,
-    **PY_TO_SGL_FUNCS
+    **PY_TO_SGL_FUNCS,
+    **PRINT_FUNCS
 }
 
 STD_ENV = Env(STD_VARS, STD_FUNCS)
