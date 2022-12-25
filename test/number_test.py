@@ -16,3 +16,8 @@ def test_to_int():
 
 def test_to_float():
     assert(eval_string('(to-float "0.5")', STD_ENV) == Number(0.5))
+
+def test_range(capsys):
+    eval_string('(for-each x (range 0 5 1) (print x))', STD_ENV)
+    captured = capsys.readouterr()
+    assert(captured.out == '0\n1\n2\n3\n4\n')
