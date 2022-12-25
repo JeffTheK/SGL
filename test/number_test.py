@@ -20,4 +20,4 @@ def test_to_float():
 def test_range(capsys):
     eval_string('(for-each x (range 0 5 1) (print x))', STD_ENV)
     captured = capsys.readouterr()
-    assert(captured.out == '0\n1\n2\n3\n4\n')
+    assert(captured.out == '01234')

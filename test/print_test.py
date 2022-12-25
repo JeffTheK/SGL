@@ -4,6 +4,11 @@ from sgl.stdlib import STD_ENV
 def test_print(capsys):
     eval_string('(print "Hello")', STD_ENV)
     captured = capsys.readouterr()
+    assert(captured.out == "Hello")
+
+def test_print_line(capsys):
+    eval_string('(print-line "Hello")', STD_ENV)
+    captured = capsys.readouterr()
     assert(captured.out == "Hello\n")
 
 def test_print_var(capsys):
@@ -11,4 +16,4 @@ def test_print_var(capsys):
     eval_string('(let i 1)', env)
     eval_string('(print i)', env)
     captured = capsys.readouterr()
-    assert(captured.out == "1\n")
+    assert(captured.out == "1")

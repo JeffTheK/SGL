@@ -29,7 +29,8 @@ Lisp like programming language
 |`(program EXPR...)`|Evaluates all EXPR|
 |`(if CONDITION ON_TRUE ON_FALSE)`|Tests CONDITION when true evaluates ON_TRUE else evaluates ON_FALSE|
 |`(let NAME VALUE)`|Creates variable named NAME with value VALUE or assigns a value to already created NAME|
-|`(print ARGS...)`| Outputs ARGS |
+|`(print-line ARGS...)`| Outputs ARGS with end line |
+|`(print ARGS...)` | Outputs ARGS without end line |
 |`(type ARG)`| Returns type as string of ARG |
 |`(func NAME EXPR...)` | Defines new function named NAME with EXPR... as body. Returns last expression as result |
 |`(class NAME VARS...)`| Defines new class named NAME with variable names VARS..., also creates a function `(new-NAME ARGS...)` that constructs an instance of that class |

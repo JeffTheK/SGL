@@ -47,4 +47,4 @@ def test_while(capsys):
     eval_string('(let i 1)', env)
     eval_string('(while (!= i 5) (print i) (let i (+ i 1)))', env)
     captured = capsys.readouterr()
-    assert(captured.out == "1\n2\n3\n4\n")
+    assert(captured.out == "1234")
