@@ -24,9 +24,9 @@ def tokenize(string: str, file_path=None):
             elif char == ')':
                 tokens.append(Token(')', line))
                 continue
-            elif char in strlib.ascii_letters + ':+-/*=!<>':
+            elif char in strlib.ascii_letters + ':+-/*=!<>%':
                 symbol = "" + char
-                while char in strlib.ascii_letters + ':+-/*=!<>0123456789':
+                while char in strlib.ascii_letters + ':+-/*=!<>%0123456789':
                     char = chars.pop(0)
                     symbol += char
                 symbol = symbol[:-1]

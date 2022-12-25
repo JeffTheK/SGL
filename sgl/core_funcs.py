@@ -76,6 +76,9 @@ def _while(args, env):
             eval(e, env)
         _while(args, env)
 
+def _pass(args, env):
+    pass
+
 CORE_FUNCS = {
     Symbol('program'): _program,
     Symbol('if'): _if,
@@ -86,5 +89,6 @@ CORE_FUNCS = {
     Symbol('include'): _include,
     Symbol('use-namespace'): _use_namespace,
     Symbol('ensure'): _ensure,
-    Symbol('while'): _while
+    Symbol('while'): _while,
+    Symbol('pass'): _pass
 }

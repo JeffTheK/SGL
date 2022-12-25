@@ -1,0 +1,40 @@
+(program
+    (func is-prime 
+        (let n ARG1)
+        (let result true)
+        (func between-4-1
+            (and (< n 4) (> n 1))
+        )
+
+        (func or1 (== (% n 2) 0))
+        (func or2 (== (% n 3) 0))
+        (func divides-by-2-or-3
+            (or (or1) (or2))
+        )
+
+        ;(let limit (math:pow n 0.5))
+        ;(func or3 (== (% n i) 0))
+        ;(func or4 (== (% n +(i 2)) 0))
+        ;(func check-range
+        ;    (for-each i (range 5 (+ limit 1) 6)
+        ;        (if (or (or3) (or4))
+        ;            (let result false)
+        ;            (pass)
+        ;        )
+        ;    )
+        ;)
+        
+        (if (between-4-1)
+            (pass)
+            (if (divides-by-2-or-3) 
+                (let result false)
+                (pass)
+            )
+            (pass)
+        )
+
+        result
+    )
+
+    (print (is-prime 5))
+)

@@ -25,6 +25,9 @@ def _multiply(args, env):
 def _divide(args, env):
     return eval(args[0], env) / eval(args[1], env)
 
+def _modulus(args, env):
+    return eval(args[0], env) % eval(args[1], env)
+
 def _less_than(args, env):
     return eval(args[0], env) < eval(args[1], env)
 
@@ -43,4 +46,5 @@ OPERATOR_FUNCS = {
     Symbol('-'): _subtract,
     Symbol('*'): _multiply,
     Symbol('/'): _divide,
+    Symbol('%'): _modulus
 }

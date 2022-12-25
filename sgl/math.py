@@ -11,8 +11,18 @@ def _cos(args, env):
 def _tan(args, env):
     return math.tan(eval(args[0], env))
 
+def _sqrt(args, env):
+    return math.sqrt(eval(args[0], env))
+
+def _pow(args, env):
+    number = eval(args[0], env)
+    power = eval(args[1], env)
+    return number**power
+
 MATH_FUNCS = {
     Symbol('math:sin'): _sin,
     Symbol('math:cos'): _cos,
-    Symbol('math:tan'): _tan
+    Symbol('math:tan'): _tan,
+    Symbol('math:sqrt'): _sqrt,
+    Symbol('math:pow'): _pow
 }

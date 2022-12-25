@@ -40,3 +40,6 @@ def test_multiply():
 
 def test_divide():
     assert(eval_string("(/ 4 2)", STD_ENV) == 2)
+
+def test_modulus():
+    assert(eval_string("(% 4 2)", STD_ENV) == 0)
