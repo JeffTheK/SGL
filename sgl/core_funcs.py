@@ -76,6 +76,9 @@ def _while(args, env):
             eval(e, env)
         _while(args, env)
 
+def _input(args, env):
+    return input()
+
 def _pass(args, env):
     pass
 
@@ -90,5 +93,6 @@ CORE_FUNCS = {
     Symbol('use-namespace'): _use_namespace,
     Symbol('ensure'): _ensure,
     Symbol('while'): _while,
+    Symbol('input'): _input,
     Symbol('pass'): _pass
 }

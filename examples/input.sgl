@@ -1,0 +1,11 @@
+(program
+    (print "Your name: ")
+    (let name (input))
+    (print-line)
+
+    (print "Your age: ")
+    (let age (input))
+    (print-line)
+
+    (print-line (format "Your name is ARG1 and you are ARG2 years old" name age))
+)
