@@ -3,7 +3,7 @@
         (let n ARG1)
         (let result true)
         (func between-4-1
-            (and (< n 4) (> n 1))
+            (< n 4)
         )
 
         (func or1 (== (% n 2) 0))
@@ -12,29 +12,41 @@
             (or (or1) (or2))
         )
 
-        ;(let limit (math:pow n 0.5))
-        ;(func or3 (== (% n i) 0))
-        ;(func or4 (== (% n +(i 2)) 0))
-        ;(func check-range
-        ;    (for-each i (range 5 (+ limit 1) 6)
-        ;        (if (or (or3) (or4))
-        ;            (let result false)
-        ;            (pass)
-        ;        )
-        ;    )
-        ;)
-        
         (if (between-4-1)
-            (pass)
+            (let result (> n 1))
             (if (divides-by-2-or-3) 
                 (let result false)
                 (pass)
             )
-            (pass)
         )
 
         result
     )
 
-    (print (is-prime 5))
+    (func is-germain-prime
+        (let a ARG1)
+        (let b (+ (* 2 a) 1))
+        (let c (+ (* 2 b) 1))
+        (let d (+ (* 2 c) 1))
+        (let result false)
+
+        (print-line (format "a: ARG1, b: ARG2, c: ARG3, d: ARG4" a b c d))
+
+        (func is-not-prime (not (is-prime ARG1)))
+        (func a-and-b-are-primes (and (is-prime a) (is-prime b)))
+        (func c-d-check (and (is-not-prime c) (is-prime d)))
+        (if (and (a-and-b-are-primes) (c-d-check))
+            (print-line a)
+            (pass)
+        )
+        
+        result
+    )
+
+    (print-line (is-prime 119))
+    ;(print-line (is-germain-prime 10))
+    (print-line (is-germain-prime 29))
+    ;(for-each x (range 1 1000 1)
+    ;    (is-germain-prime x)
+    ;)
 )
