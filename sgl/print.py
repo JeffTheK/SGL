@@ -1,8 +1,9 @@
 from .types import Symbol
+from .eval import eval
 
 def _print(args, env):
     for arg in args:
-        print(eval(arg, env))
+        print(str(eval(arg, env)))
 
 PRINT_FUNCS = {
     Symbol('print'): _print
