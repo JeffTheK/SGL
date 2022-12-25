@@ -1,0 +1,13 @@
+(program
+    (func hello (print-line "Hello from function"))
+    (func add 
+        (let result (+ ARG1 ARG2))
+        (print-line (format "Hello from another function which received ARG1 and ARG2 as parameters" ARG1 ARG2))
+        (print-line "Lets add them together")
+        (print-line (format "The result is: ARG1" result))
+    )
+
+    (hello)
+    (print-line)
+    (add 2 3)
+)
