@@ -90,3 +90,8 @@ Lisp like programming language
 |`(file:write FILE TEXT)` | Writes TEXT to FILE |
 |`(file:close FILE)` | Closes file and finishes all operations |
 |`(file:mkdir PATH)` | Creates directory in PATH |
+
+### Special
+|Syntax|Description|
+|------|-----------|
+|`(sgl:alias ALIAS ORIGINAL)`| Creates an alias for ORIGINAL func as ALIAS |

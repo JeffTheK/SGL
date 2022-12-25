@@ -14,6 +14,12 @@ def _classes(args, env):
             output[key] = value
     return output
 
+def _alias(args, env):
+    alias_symbol = args[0]
+    original_symbol = args[1]
+    func = env.funcs[original_symbol]
+    env.funcs[alias_symbol] = func
+
 SPECIAL_VARS = {
     Symbol('sgl:version'): __version__,
     Symbol('sgl:authors'): "Dmytro Kolibabchuk"
@@ -22,5 +28,6 @@ SPECIAL_VARS = {
 SPECIAL_FUNCS = {
     Symbol('sgl:vars'): _vars,
     Symbol('sgl:funcs'): _funcs,
-    Symbol('sgl:classes'): _classes
+    Symbol('sgl:classes'): _classes,
+    Symbol('sgl:alias'): _alias
 }
