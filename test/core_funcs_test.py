@@ -41,3 +41,10 @@ def test_ensure():
     eval_string('(ensure (== 1 1))', env)
     with pytest.raises(AssertionError):
         eval_string('(ensure (== 1 2))', env)
+
+def test_while(capsys):
+    env = STD_ENV
+    eval_string('(let i 1)', env)
+    eval_string('(while (!= i 5) (print i) (let i (+ i 1)))', env)
+    captured = capsys.readouterr()
+    assert(captured.out == "1\n2\n3\n4\n")

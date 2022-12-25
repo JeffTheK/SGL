@@ -19,6 +19,8 @@ def eval(x: Exp, env: Env, file_path=None) -> Exp:
             return x.value.replace("\\s", " ").replace("\\op", "(").replace("\\cp", ")")
         elif type(x) is List:
             return x.elements
+        elif type(x) is bool:
+            return x
         elif x[0] in env.funcs.keys():
             return env.funcs[x[0]](x[1:], env)
         else:                            # procedure call

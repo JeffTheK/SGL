@@ -36,6 +36,7 @@ Lisp like programming language
 |`(include FILE_PATH)` | Reads and evaluates file in FILE_PATH |
 |`(use-namespace NAMESPACE)` | Removes the NAMESPACE part from functions and variables symbols for use in current file |
 |`(ensure CONDITION MESSAGE)` | Asserts CONDITION and raises exception when false and prints optional MESSAGE |
+|`(while CONDITION EXPR...)` | While CONDITION returns true, evaluate EXPR... |
 
 ### Operators
 

@@ -68,6 +68,14 @@ def _ensure(args, env):
         print("KEK")
         raise AssertionError(message)
 
+def _while(args, env):
+    condition = eval(args[0], env)
+    expressions = args[1:]
+    if eval(condition, env) == True:
+        for e in expressions:
+            eval(e, env)
+        _while(args, env)
+
 CORE_FUNCS = {
     Symbol('program'): _program,
     Symbol('if'): _if,
@@ -77,5 +85,6 @@ CORE_FUNCS = {
     Symbol('func'): _func,
     Symbol('include'): _include,
     Symbol('use-namespace'): _use_namespace,
-    Symbol('ensure'): _ensure
+    Symbol('ensure'): _ensure,
+    Symbol('while'): _while
 }

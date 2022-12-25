@@ -1,3 +1,5 @@
+import traceback
+
 def error(message, exception=None, line=None, file_path=None):
     message = f"Error! {message}: {exception}"
     if line is not None:
@@ -6,4 +8,5 @@ def error(message, exception=None, line=None, file_path=None):
         file = open(file_path)
         line_string = file.readlines()[line - 1]
         message += f"\n{line} | {line_string}"
+    print(traceback.format_exc())
     print(message)
