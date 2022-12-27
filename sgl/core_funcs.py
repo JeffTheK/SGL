@@ -2,6 +2,10 @@ from .types import Symbol, String
 from .eval import eval, eval_string
 import os
 
+class Return:
+    def __init__(self, value) -> None:
+        self.value = value
+
 def _program(args, env):
     for exp in args:
         eval(exp, env)
@@ -28,7 +32,9 @@ def _func_call(args, env, body):
         env.vars[Symbol(f'ARG{i + 1}')] = eval(arg, env)
 
     for x in body[:-1]:
-        eval(x, env)
+        result = eval(x, env)
+        if type(result) is Return:
+            return result.value
     return eval(body[-1], env)
 
 def _func(args, env):
@@ -82,6 +88,10 @@ def _input(args, env):
 def _pass(args, env):
     pass
 
+def _return(args, env):
+    value = eval(args[0], env)
+    return Return(value)
+
 CORE_FUNCS = {
     Symbol('program'): _program,
     Symbol('if'): _if,
@@ -94,5 +104,6 @@ CORE_FUNCS = {
     Symbol('ensure'): _ensure,
     Symbol('while'): _while,
     Symbol('input'): _input,
-    Symbol('pass'): _pass
+    Symbol('pass'): _pass,
+    Symbol('return'): _return
 }

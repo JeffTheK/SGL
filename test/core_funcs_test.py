@@ -48,3 +48,25 @@ def test_while(capsys):
     eval_string('(while (!= i 5) (print i) (let i (+ i 1)))', env)
     captured = capsys.readouterr()
     assert(captured.out == "1234")
+
+def test_return():
+    env = STD_ENV
+    code = """
+(func my-func1 
+    (if (> ARG1 10)
+        (return ">10")
+        (pass)
+    )
+
+    (if (< ARG1 -10)
+        (return "<10")
+        (pass)
+    )
+
+    "other"
+)
+"""
+    eval_string(code, env)
+    assert(eval_string('(my-func1 11)', env) == ">10")
+    assert(eval_string('(my-func1 -11)', env) == "<10")
+    assert(eval_string('(my-func1 5)', env) == "other")
